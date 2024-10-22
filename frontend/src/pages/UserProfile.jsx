@@ -74,7 +74,12 @@ const UserProfile = ({ user: loggedInUser }) => {
                 <p><span className="font-bold">{user?.following?.length}</span> Following</p>
             </p>
               {
-                user && user._id === loggedInUser._id ? "" : <button onClick={followHandler} className="bg-gray-200 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95"></button>
+                user && user._id  === loggedInUser._id ? "" : 
+                <div className="flex justify-center mt-4 space-x-2">
+                  <button onClick={followHandler} className="bg-gray-200 px-4 py-2 rounded">
+                    {isFollow ? "Unfollow":"Follow"}
+                  </button>
+                </div>
               }
             <div className="mt-4 flex flex-wrap justify-center gap-4">
               {userPins && userPins.length > 0 ? (
