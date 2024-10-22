@@ -73,14 +73,9 @@ const UserProfile = ({ user: loggedInUser }) => {
                 <p><span className="font-bold">{user?.followers?.length}</span> Followers</p>
                 <p><span className="font-bold">{user?.following?.length}</span> Following</p>
             </p>
-            <div className="flex justify-center mt-4 space-x-2">
-              <button
-                onClick={followHandler}
-                className="bg-gray-200 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95"
-              >
-                {isFollow ? "Unfollow" : "Follow"}
-              </button>
-            </div>
+              {
+                user && user._id === loggedInUser._id ? "" : <button onClick={followHandler} className="bg-gray-200 px-4 py-2 rounded hover:bg-red-500 hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95"></button>
+              }
             <div className="mt-4 flex flex-wrap justify-center gap-4">
               {userPins && userPins.length > 0 ? (
                 <Masonry
