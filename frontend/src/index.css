@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.common-input {
+  @apply mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm;
+}
+
+.common-btn {
+  @apply w-full py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}
+
+/* Masonry grid styles */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px; /* Adjust according to your desired gutter size */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 15px; /* Adjust according to your desired gutter size */
+  background-clip: padding-box;
+}
+
+/* Set spacing between each pin */
+.my-masonry-grid_column > div {
+  margin-bottom: 15px;
+}
